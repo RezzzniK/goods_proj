@@ -10,7 +10,22 @@
           "priceListName": "second",
           "extErpPriceListID": 22
         },
-        { "priceListID": 3, "priceListName": "third", "extErpPriceListID": 33 }
+        { "priceListID": 3, "priceListName": "third", "extErpPriceListID": 33 },
+        {
+          "priceListID": 4,
+          "priceListName": "dsfdgfh",
+          "extErpPriceListID": 2345
+        },
+        {
+          "priceListID": 27,
+          "priceListName": "qwertyd",
+          "extErpPriceListID": 333
+        },
+        {
+          "priceListID": 322,
+          "priceListName": "tgbyhn",
+          "extErpPriceListID": 6789
+        }
       ]
     }
   }

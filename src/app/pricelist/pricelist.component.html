@@ -1,11 +1,26 @@
-<div class="container">
-  <div class="col-xs-12">
-    <ul>
-      <li *ngFor="let list of priceListArr">
-        <div class="col-sm-2">
-          <a href="#">{{ list.priceListID }}:{{ list.priceListName }} </a>
-        </div>
-      </li>
-    </ul>
-  </div>
+<div class="form-group">
+  <input
+    type="text"
+    class="form-control p-3 mb-2 bg-warning text-dark"
+    placeholder="Search Here"
+    [(ngModel)]="searchString"
+  />
 </div>
+<table class="table table-striped table-dark table-hover">
+  <thead class="text-warning">
+    <tr>
+      <th scope="col">priceListID</th>
+      <th scope="col">priceListName</th>
+      <th scope="col">extErpPriceListID</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of priceListArr | filter: searchString">
+      <td>{{ list.priceListID }}</td>
+      <td>{{ list.priceListName }}</td>
+      <td (click)="onErpChange()">{{ list.extErpPriceListID }}</td>
+      <td><button class="btn btn-warning">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
