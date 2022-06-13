@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 // //angular material modules
+import { MatDialogModule } from '@angular/material/dialog';
 //import { MatTableModule } from '@angular/material/table';
 // import { MatFormFieldModule } from '@angular/material/form-field';
 // import { MatButtonModule } from '@angular/material/button';
@@ -30,6 +31,7 @@ import { RequestsInterceptorService } from './services/requests.interceptor.serv
     BrowserAnimationsModule,
     Ng2SearchPipeModule,
     FormsModule,
+    MatDialogModule,
   ],
   providers: [
     {

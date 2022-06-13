@@ -20,7 +20,14 @@
       <td>{{ list.priceListID }}</td>
       <td>{{ list.priceListName }}</td>
       <td (click)="onErpChange()">{{ list.extErpPriceListID }}</td>
-      <td><button class="btn btn-warning">Edit</button></td>
+      <td>
+        <button
+          class="btn btn-warning"
+          (click)="EditPriceList(list.priceListID)"
+        >
+          Edit
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
