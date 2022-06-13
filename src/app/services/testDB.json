@@ -1,0 +1,17 @@
+{
+  "priceList": {
+    "status": 200,
+    "message": "OK",
+    "body": {
+      "priceLists": [
+        { "priceListID": 1, "priceListName": "first", "extErpPriceListID": 11 },
+        {
+          "priceListID": 2,
+          "priceListName": "second",
+          "extErpPriceListID": 22
+        },
+        { "priceListID": 3, "priceListName": "third", "extErpPriceListID": 33 }
+      ]
+    }
+  }
+}
