@@ -13,14 +13,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 
 import { ToastrModule } from 'ngx-toastr';
-//import { MatTableModule } from '@angular/material/table';
-// import { MatButtonModule } from '@angular/material/button';
-// import { MatIconModule } from '@angular/material/icon';
-// import { MatInputModule } from '@angular/material/input';
-// import { MatToolbarModule } from '@angular/material/toolbar';
-// import { MatProgressBarModule } from '@angular/material/progress-bar';
-// import { MatSnackBarModule } from '@angular/material/snack-bar';
-
 //components/services/models
 import { AppComponent } from './app.component';
 import { PricelistComponent } from './pricelist/pricelist.component';

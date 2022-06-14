@@ -9,18 +9,18 @@ import { PriceListService } from '../services/priceList.service';
   styleUrls: ['./detail-edit.component.css'],
 })
 export class DetailEditComponent implements OnInit {
-  priceList2Edit: PriceList;
-  priceLists: PriceList[] = [];
-  editForm: FormGroup;
+  priceList2Edit: PriceList;//variable that we get from priceList component
+  priceLists: PriceList[] = [];//array of price lists that we getting from the priclist comp
+  editForm: FormGroup;//variable to mangae our reactive form
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: PriceList,
-    private priceListService: PriceListService
+    @Inject(MAT_DIALOG_DATA) public data: PriceList/*this service is getting access to data from pricelist component */,
+    private priceListService: PriceListService//pricelist service to handle update service
   ) {}
 
   ngOnInit(): void {
     this.priceList2Edit = this.data[0];
     this.priceLists = [...this.data[1]];
-    this.editForm = new FormGroup({
+    this.editForm = new FormGroup({//creating form group & form controls & validators
       priceListName: new FormControl(this.priceList2Edit.priceListName, [
         Validators.required,
         Validators.minLength(10),
@@ -30,14 +30,14 @@ export class DetailEditComponent implements OnInit {
         this.priceList2Edit.extErpPriceListID,
         [
           Validators.pattern(/^-?(0|[1-9]\d*)?$/),
-          this.forbiddenExtID.bind(this),
+          this.forbiddenExtID.bind(this),//custom validator
         ]
       ),
     });
   }
-  forbiddenExtID(control: FormControl): { [s: string]: boolean } {
+  forbiddenExtID(control: FormControl): { [s: string]: boolean } {//custom validator
     if (
-      this.priceLists.find(
+      this.priceLists.find(//searching for occurences of Id's
         (x) =>
           x.extErpPriceListID === Number(control.value) ||
           x.priceListID === Number(control.value)
@@ -49,7 +49,7 @@ export class DetailEditComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit() {//submit fucntion that activating our update service and closes dialog window
     this.priceList2Edit.priceListName =
       this.editForm.get('priceListName').value;
     this.priceList2Edit.extErpPriceListID = Number(
