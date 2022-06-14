@@ -1,0 +1,21 @@
+.form-group {
+  position: relative;
+  padding-top: 4px;
+}
+.myIcon {
+  position: absolute;
+  margin-left: 10px;
+}
+.mySpan {
+  position: relative;
+  padding-top: 2px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.help-block {
+  margin-left: 20px;
+  color: red;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}

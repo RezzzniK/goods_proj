@@ -1,1 +1,135 @@
-<p>detail-edit works!</p>
+<!-- <h1 mat-dialog-title>{{ dialogLabel }}</h1>
+<h2>{{ priceList2Edit.priceListID }}</h2>
+<h2>{{ priceList2Edit.priceListName }}</h2>
+<h2>{{ priceList2Edit.extErpPriceListID }}</h2> -->
+<!-- <mat-tab-group>
+  <mat-tab label="Edit Form">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <form [formGroup]="editForm">
+          <table class="example" cellspacing="0">
+            <tr>
+              <td>
+                {{ priceList2Edit.priceListID }}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input
+                    matInput
+                    placeholder="priceListName"
+                    type="text"
+                    id="priceListName"
+                    formControlName="priceListName"
+                    class="form-control"
+                    required
+                  />
+                  <span
+                    *ngIf="
+                      !editForm.get('priceListName').valid &&
+                      editForm.get('priceListName').touched
+                    "
+                    class="help-block"
+                  >
+
+                  </span>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          class="btn btn-warning"
+          [disabled]="!editForm.valid"
+          (click)="onSubmit(editForm.value)"
+        >
+          Submit
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group> -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="PriceListID" class="mySpan"
+            >PriceList ID : {{ priceList2Edit.priceListID }}
+          </label>
+          <mat-icon class="myIcon"> lock</mat-icon>
+        </div>
+        <hr class="mySpan" />
+        <div class="form-group">
+          <label for="PriceListName" class="mySpan">PriceList Name: </label>
+          <input
+            type="text"
+            id="priceListName"
+            formControlName="priceListName"
+            class="form-control mySpan"
+          />
+          <span
+            *ngIf="
+              !editForm.get('priceListName').valid &&
+              editForm.get('priceListName').touched
+            "
+            class="help-block"
+          >
+            <span *ngIf="editForm.get('priceListName').errors['required']"
+              >This field is required!</span
+            >
+            <span *ngIf="editForm.get('priceListName').errors['minlength']"
+              >Minimum length 10 chars!</span
+            >
+            <span *ngIf="editForm.get('priceListName').errors['pattern']"
+              >Only letters allowed!</span
+            >
+          </span>
+        </div>
+        <hr class="mySpan" />
+        <div class="form-group">
+          <label for="PriceListID" class="mySpan">ExtErpPriceList </label>
+          <input
+            type="text"
+            id="extErpPriceListID"
+            class="form-control mySpan"
+            formControlName="extErpPriceListID"
+          />
+          <span
+            *ngIf="
+              !editForm.get('extErpPriceListID').valid &&
+              editForm.get('extErpPriceListID').touched
+            "
+            class="help-block"
+          >
+            <span *ngIf="editForm.get('extErpPriceListID').errors['pattern']"
+              >Only numbers allowed!</span
+            >
+            <span
+              *ngIf="
+                !editForm.get('extErpPriceListID').errors['forbiddenExtID']
+              "
+            >
+              Number Already Taken!
+            </span>
+          </span>
+        </div>
+        <hr class="mySpan" />
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button
+            class="btn btn-primary mySpan"
+            type="submit"
+            [disabled]="!editForm.valid"
+            mat-dialog-close
+          >
+            Submit
+          </button>
+          <button mat-dialog-close class="btn btn-warning meow">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
