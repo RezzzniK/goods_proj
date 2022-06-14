@@ -37,7 +37,11 @@ export class DetailEditComponent implements OnInit {
   }
   forbiddenExtID(control: FormControl): { [s: string]: boolean } {
     if (
-      this.priceLists.find((x) => x.extErpPriceListID === Number(control.value))
+      this.priceLists.find(
+        (x) =>
+          x.extErpPriceListID === Number(control.value) ||
+          x.priceListID === Number(control.value)
+      )
     ) {
       return { 'ExtErpPriceListID is taken': true };
     } else {
